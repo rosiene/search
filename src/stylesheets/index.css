@@ -13,12 +13,14 @@ body {
   width: 960px;
 }
 
-.search_input{
+.search_input form{
   border: #D7D7D7 1px solid;
   margin: 20px 25px 0 25px;
   display: flex;
 }
+
 .search_input input{
+  display: inline;
   border: none;
   padding: 10px;
   font-size: 14px;
@@ -28,10 +30,31 @@ body {
   box-sizing: border-box;
 }
 
-.search_input input:focus{
+.search_input input:focus, .search_input button:focus{
   outline: none;
 }
 
-.search_input i{
-  margin: 10px 10px 10px 0;
+button{
+  display: inline;
+  margin: 10px;
+  padding: 0;
+  cursor: pointer;
+  font-size: 16px;
+  border: none;
+  background: none;
+}
+
+button i {
+  color: #909090;
+}
+button:hover i {
+  color: black;
+}
+
+.search_input input[value=""] ~ .clean_input {
+  display: none;
+}
+
+.search_input input:focus ~ .clean_input{
+  display: inline;
 }
