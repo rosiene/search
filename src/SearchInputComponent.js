@@ -6,8 +6,11 @@ class SearchInputComponent extends Component {
 
   constructor(){
     super();
-    this.state = {text: ''};
+    this.state = {
+      text: ''
+    };
     this.handleChange = this.handleChange.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
     this.cleanInputSearch = this.cleanInputSearch.bind(this);
   }
 
@@ -16,6 +19,11 @@ class SearchInputComponent extends Component {
    */
   handleChange(event){
     this.setState({text: event.target.value});
+    if (event.target.value == ''){
+      this.props.cleanSearch();
+    }else{
+      this.props.doSearch(event.target.value);
+    }
   }
 
   /**
@@ -23,15 +31,14 @@ class SearchInputComponent extends Component {
    */
   cleanInputSearch(){
     this.setState({text: ''});
+    this.props.cleanSearch();
   }
 
   /**
-   * Render search input component
-   * @return {js}
+   * Callback do search
    */
-  doSearch(event){
+  handleSearch(event){
     event.preventDefault();
-    console.log('search');
   }
 
   /**
@@ -40,9 +47,9 @@ class SearchInputComponent extends Component {
    */
   render() {
     return (
-      <div className="search_input">
-        <form id="search-form" onSubmit={this.doSearch.bind(this)}>
-          <input placeholder="Zoeken" value={this.state.text} type="text" onChange={this.handleChange}/>
+      <div className={`search_input ${this.state.text ? 'hover-seach' : ''}`}>
+        <form id="search-form" onSubmit={this.handleSearch}>
+          <input placeholder="Zoeken" value={this.state.text} type="text" onChange={this.handleChange} onFocus={this.hoverElements}/>
           <button type="button" className="clean_input" name="cleanInput" onClick={this.cleanInputSearch}>
             <IconRemove />
           </button>

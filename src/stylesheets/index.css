@@ -19,6 +19,10 @@ body {
   display: flex;
 }
 
+.hover-seach form{
+  border-color: black;
+}
+
 .search_input input{
   display: inline;
   border: none;
@@ -57,4 +61,21 @@ button:hover i {
 
 .search_input input:focus ~ .clean_input{
   display: inline;
+}
+
+.search_input input:focus ~ .hover-seach form{
+  border-color: black;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0 25px;
+  padding: 0;
+  border-left: 1px solid #d1d1d1;
+  border-right: 1px solid #d1d1d1;
+}
+
+li {
+  border-bottom: 1px solid #d1d1d1;
+  padding: 10px;
 }

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import SearchInputComponent from './SearchInputComponent';
+import SearchComponent from './SearchComponent';
 
 class App extends Component {
   render() {
     return (
       <div className="container">
         <div className="main">
-          <SearchInputComponent/>
+          <SearchComponent/>
         </div>
       </div>
     );
