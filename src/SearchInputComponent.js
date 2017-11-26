@@ -11,7 +11,7 @@ class SearchInputComponent extends Component {
   render() {
     return (
       <div className="search_input">
-        <input type="text" name="search"/>
+        <input placeholder="Zoeken" type="text" name="search"/>
         <IconSearch color="dark-grey" />
       </div>
     );
