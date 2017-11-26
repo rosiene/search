@@ -6,3 +6,8 @@ it('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(<App />, div);
 });
+
+it('input search on page', () => {
+  const input = document.createElement('input');
+  ReactDOM.render(<App />, input);
+});

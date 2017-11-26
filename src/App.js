@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
+import SearchInputComponent from './SearchInputComponent';
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <div>
-          <h2>Hello world</h2>
+      <div className="container">
+        <div className="main">
+          <SearchInputComponent/>
         </div>
-        <p>
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
       </div>
     );
   }
